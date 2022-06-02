@@ -1,12 +1,55 @@
+/* * {
+  border: 1px solid red;
+} */
+
+p,
 body {
+  /* reset */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  background-color: cadetblue;
+  /*  */
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 243, 222);
 }
 
-#main {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9c/-nature.jpg");
-  height: 200px;
-  width: 200px;
+#quotebox {
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  height: 80vh;
 }
 
+#quotecontent {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/bd/95865267_Jpg_%28165471921%29.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*  */
+  display: flex;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  border: 3px solid #ffffff;
+  align-items: center;
+  justify-content: center;
+}
 
+#quote {
+  font-weight: bold;
+  font-size: large;
+  margin: auto 5vw auto 1vw;
+}
+
+#origin {
+  display: block;
+  text-align: right;
+  font-style: italic;
+}
