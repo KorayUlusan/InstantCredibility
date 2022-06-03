@@ -14,4 +14,6 @@ if (args.author && args.year) {
   document.getElementById("origin").innerHTML = `- ${args.author}, ${args.year}`;
 } else if (args.author) {
   document.getElementById("origin").innerHTML = `- ${args.author}`;
+} else if (args.year) {
+  document.getElementById("origin").innerHTML = `- unknown, ${args.year}`;
 }
