@@ -1,3 +1,9 @@
+body {
+  /* align-items: center; */
+  max-width: 72ch;
+  margin: auto auto;
+}
+
 p {
   /* text-align: left; */
 }
