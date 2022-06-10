@@ -3,3 +3,18 @@
   background-color: inherit;
   font-size: larger;
 }
+
+#generatorbox {
+  margin: auto auto;
+  max-width: 20em;
+  text-align: right;
+  padding-right: 5.5em;
+}
+
+iframe {
+  height: 80vh;
+  width: 80vw;
+  /*  */
+  margin-top: -5vh;
+  margin-bottom: -20vh;
+}

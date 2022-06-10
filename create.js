@@ -3,35 +3,43 @@ if (htmlName == "") {
   // remove trailing slash
   location.href = location.href.slice(0, -1);
 }
+
+// === script start ===
 const quoteUrl = location.href.split(htmlName)[0] + "quote.html";
-var generatedUrlElem = document.getElementById("quoteUrl");
 
 function createUrl() {
   var quoteInput = document.getElementById("quote");
   if (!quoteInput.value) {
-    return;
+    return quoteUrl;
   }
   var authorInput = document.getElementById("author");
-  if (!authorInput.value) {
-    authorInput.value = "unknown";
-  }
   var yearInput = document.getElementById("year");
 
   // create url
-  var url =
-    `${quoteUrl}?q=${encodeURIComponent(quoteInput.value)}&a=${encodeURIComponent(authorInput.value)}` +
-    (yearInput.value == "" ? "" : `&y=${encodeURIComponent(yearInput.value)}`);
-
-  generatedUrlElem.href = url;
-  generatedUrlElem.innerHTML = url;
-
-  // cleanup after yourself
-  if (authorInput.value == "unknown") {
-    authorInput.value = "";
-  }
+  return (
+    `${quoteUrl}?q=${encodeURIComponent(quoteInput.value)}` +
+    (authorInput.value == "" ? "" : `&a=${encodeURIComponent(authorInput.value)}`) +
+    (yearInput.value == "" ? "" : `&y=${encodeURIComponent(yearInput.value)}`)
+  );
 }
 
-document.getElementById("createUrl").addEventListener("click", createUrl);
+function displayQuote() {
+  var iframe = document.getElementById("quotePage");
+  iframe.src = createUrl();
+}
+
+var timeout = null;
+document.addEventListener("keyup", () => {
+  // using timeouts because otherwise when the user types
+  // too fast the iframe takes some time to load,
+  // which results in not displaying preview.
+  clearTimeout(timeout);
+  timeout = setTimeout(displayQuote, 100);
+});
+
+document.getElementById("openUrl").addEventListener("click", () => {
+  window.open(createUrl()).focus();
+});
 
 function copyToClipboard(copyText) {
   // https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
@@ -45,10 +53,7 @@ function copyToClipboard(copyText) {
 }
 
 function copyUrl() {
-  if (!generatedUrlElem.innerHTML) {
-    document.getElementById("createUrl").click();
-  }
-  navigator.clipboard.writeText(generatedUrlElem.href);
+  navigator.clipboard.writeText(createUrl());
 }
 
 document.getElementById("copyUrl").addEventListener("click", copyUrl);

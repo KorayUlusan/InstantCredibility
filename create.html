@@ -2,8 +2,8 @@
 <html lang="en" xml:lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Quotes from Thinkers</title>
-    <meta name="description" content="Have you seen this one?" />
+    <title>Create a quote</title>
+    <meta name="description" content="World is Your Oyster" />
     <meta name="keywords" content="quotes, thinkers" />
 
     <meta name="author" content="Koray Ulusan" />
@@ -24,26 +24,27 @@
     <h3>The World is Your Oyster</h3>
     <br />
 
-    <label for="quote">Quote<mark id="asterisk">*</mark></label>
-    <input type="text" id="quote" required placeholder="Enter your quote here" />
+    <div id="generatorbox">
+      <label for="quote">Quote<mark id="asterisk">*</mark></label>
+      <input type="text" id="quote" required placeholder="Enter your quote here" />
+      <br />
+
+      <label for="author">Author</label>
+      <input type="text" id="author" placeholder="unknown" />
+      <br />
+
+      <label for="year">Year</label>
+      <input type="text" id="year" placeholder="" />
+    </div>
     <br />
 
-    <label for="author">Author</label>
-    <input type="text" id="author" placeholder="unknown" />
-    <br />
+    <button id="openUrl">Open Quote</button>
+    <button id="copyUrl">Copy link</button>
 
-    <label for="year">Year</label>
-    <input type="text" id="year" placeholder="" />
-    <br />
-
-    <button id="createUrl">Create Quote</button>
-
-    <p>
-      <a id="quoteUrl"></a>
-    </p>
-    <br />
-
-    <button id="copyUrl">Copy URL</button>
+    <h2 style="margin-bottom: 0px">Preview:</h2>
+    <div id="quotedisplay">
+      <iframe id="quotePage" src="" title="displaying quote"></iframe>
+    </div>
 
     <script src="./create.js"></script>
   </body>

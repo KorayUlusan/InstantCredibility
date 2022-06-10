@@ -7,3 +7,13 @@ body {
 p {
   /* text-align: left; */
 }
+
+#quotedisplay {
+  height: 40vh;
+}
+
+iframe {
+  max-width: 72ch;
+  width: 80vw;
+  height: 50vh;
+}
