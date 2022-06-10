@@ -23,9 +23,9 @@ body {
 a {
   color: rgb(215, 226, 49);
 }
-a:visited {
+/* a:visited {
   color: rgb(191, 226, 49);
-}
+} */
 
 #quotedisplay {
   overflow: hidden;

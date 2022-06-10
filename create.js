@@ -35,7 +35,8 @@ document.getElementById("generatorbox").addEventListener("keyup", () => {
   // too fast the iframe takes some time to load,
   // which results in not displaying preview.
   clearTimeout(timeout);
-  timeout = setTimeout(displayQuote, 100);
+  // timeout can't be small, page flickers using chrome :/
+  timeout = setTimeout(displayQuote, 400);
 });
 
 document.getElementById("openUrl").addEventListener("click", () => {
